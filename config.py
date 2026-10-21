@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent
 RUN_MODEL_PATH = BASE_DIR / "runs" / "detect" / "pen_retrain" / "weights" / "best.pt"
 DEFAULT_MODEL_PATH = RUN_MODEL_PATH
     
-MODEL_PATH = os.getenv("MODEL_PATH", str(DEFAULT_MODEL_PATH))
+MODEL_PATH = BASE_DIR / "best.pt"
 
 HIGH_CONF = float(os.getenv("HIGH_CONF", 0.60))
 POSSIBLE_LOW = float(os.getenv("POSSIBLE_LOW", 0.55))
