@@ -17,11 +17,11 @@ from opencv_compat import ensure_cv2_compat
 ensure_cv2_compat()
 
 from ultralytics import YOLO
-from config import CONFIDENCE_THRESHOLD, IOU_THRESHOLD as CONFIG_IOU_THRESHOLD
+from config import (MODEL_PATH,CONFIDENCE_THRESHOLD, IOU_THRESHOLD as CONFIG_IOU_THRESHOLD)
 
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH_FILE = BASE_DIR / "model_path.txt"
-TRAINED_MODEL_PATH = BASE_DIR / "runs" / "detect" / "pen_retrain" / "weights" / "best.pt"
+TRAINED_MODEL_PATH = BASE_DIR /  "best.pt"
 FALLBACK_MODEL_PATH = BASE_DIR / "yolo11s.pt"
 DATASET_YAML_PATH = BASE_DIR / "pen-detection.v1i.yolov8" / "data_fixed.yaml"
 BLOCKED_OBJECTS = ["wire", "rope", "cable", "cord", "string"]
